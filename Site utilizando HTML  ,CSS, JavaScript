@@ -1,0 +1,77 @@
+HTML
+
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exemplos de Arrays e Objetos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplos de Arrays e Objetos</h1>
+
+        <p>Veja abaixo os exemplos de uso de Arrays e Objetos em JavaScript</p>
+
+        <button onclick="exibirArray()">Mostrar Array</button>
+        <div id="objectOutputArray" class="output"></div>
+
+        <button onclick="exibirObjeto()">Mostrar Objeto</button>
+        <div id="objectOutputObjeto" class="output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+--------------------------------------------
+CSS
+.output {
+    background-color: #e7f3ff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+-------------------------------------------------
+JavaScript
+
+// Função para mostrar o Array
+function exibirArray() {
+    let fruits = ["Maçã", "Banana", "Laranja", "Manga"];
+    let output = "<strong>Array de frutas:</strong><br>";
+    output += "Total de frutas: " + fruits.length + "<br>"; // Corrigido 'lenght' para 'length'
+  
+    fruits.forEach(function(fruit, index) {
+        output += (index + 1) + ". " + fruit + "<br>";
+    });
+  
+    document.getElementById("objectOutputArray").innerHTML = output; // Corrigido o ID para o correto
+}
+
+// Função para mostrar um objeto
+function exibirObjeto() {
+    let pessoa = {
+        nome: "Maria", // Corrigido a sintaxe
+        idade: 30,
+        profissão: "Engenheira" // Corrigido o valor
+    };
+    
+    let output = "<strong>Objeto Pessoa:</strong><br>";
+    output += "Nome: " + pessoa.nome + "<br>";
+    output += "Idade: " + pessoa.idade + "<br>";
+    output += "Profissão: " + pessoa.profissão + "<br>";
+    
+    document.getElementById("objectOutputObjeto").innerHTML = output; // Corrigido o ID para o correto
+}
